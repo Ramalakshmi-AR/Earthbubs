@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dropdown on Hover</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url('https://images.unsplash.com/photo-1589820296159-bc7b55f66c2a') no-repeat center center/cover;
+      height: 100vh;
+      color: #fff;
+    }
+
+    /* Navigation bar */
+    .navbar {
+      display: flex;
+      align-items: center;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 10px 20px;
+      position: relative;
+    }
+
+    .navbar a {
+      margin: 0 15px;
+      color: black;
+      text-decoration: none;
+      font-size: 18px;
+      position: relative;
+    }
+
+    /* Dropdown container */
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 40px;
+      background-color: white;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+      border-radius: 5px;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 10px 12px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+
+    /* Show dropdown on hover */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Header section over background */
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      color: white;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <a href="#">Home</a>
+    <div class="dropdown">
+      <a href="#">Products</a>
+      <div class="dropdown-content">
+        <a href="#">Pampers</a>
+        <a href="#">Boy’s Fashions</a>
+        <a href="#">Girl’s Fashions</a>
+        <a href="#">Sope</a>
+        <a href="#">Stroller</a>
+        <a href="#">Bottle</a>
+      </div>
+    </div>
+    <a href="#">Offers</a>
+    <a href="#">About</a>
+    <a href="#">Contacts</a>
+    <input type="text" placeholder="Search..." style="margin-left:auto;padding:6px 10px;border-radius:5px;border:1px solid #ccc;">
+  </div>
+
+  <div class="hero">
+    <h1>Gentle Care for Growing Joy</h1>
+    <p>Premium baby care products crafted with love, purity, and the softest materials – because your baby deserves the best.</p>
+  </div>
+
+</body>
+</html>

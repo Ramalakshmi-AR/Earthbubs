@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baby shop</title>
+     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        
+       body {
+    font-family: 'Poppins';font-size: 22px;
+}
+
+        .main-content{
+            display:grid;
+            font-size: 26px;
+           
+            
+            font-family:poppins;
+            grid-template-columns: repeat(3,1fr);
+            justify-content: center;
+            grid-auto-rows: minmax(auto,auto);
+            grid-template-areas: 
+                                "hd hd hd"
+                                "pc pc pc"
+                                "pc pc pc"
+                                "ft ft ft";
+            
+        }
+        .header{
+            grid-area: hd;
+            height:60vh;
+            position:absolute;
+            width:100%;
+            overflow:hidden;
+            flex-direction: column;
+            background-color: white;
+        }
+        .nav{
+            display:flex;
+            flex-direction: row;
+            position: sticky;
+            top:0;
+            left:0;
+            justify-content: space-between;
+            border:1px solid grey;
+            padding:12px 15px;
+        }
+        .active{
+          background-image: linear-gradient(to top,#B0E4F4,white);
+        }
+
+        .active1:hover{
+           background-image: linear-gradient(to top,#B0E4F4,white);
+        }
+       
+        a{
+            text-decoration: none;
+             color:black;
+        }
+        
+.flex-container{
+            display:grid;
+            grid-template-columns:1fr 1fr 1fr; 
+           row-gap: 100px; 
+           align-content: space-between;
+            justify-content:space-between;
+           font-size: 18px;
+            
+        }
+
+        .flex-card1{
+            display:flex;
+            flex-direction:column;
+             width:300px;
+            height:390px;
+            border:2px solid #B0E4F4;           
+            justify-content:space-between;
+            align-items: center;
+             border-radius: 15px;
+             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+             font-size: 18px;
+             font-weight: bold;
+            position: relative;
+            overflow: hidden;
+             
+             
+        }
+.container1 {
+  --height: 6.5rem;
+  perspective: 100px;
+  isolation: isolate;
+  display: inline-flex;
+  
+  flex-direction: row;
+}
+
+.main1,
+.angle1 {
+  display: inline-flex;
+  align-items: center;
+  padding-left: 1rem;
+  background-color: #B0E4F4;
+  border-radius: 0.5rem;
+}
+
+.main1 {
+  height: 6.5rem;
+  width: 190px;
+ 
+}
+
+.angle1 {
+  position: relative;
+  right: 30px;
+  width: 30px;
+  transform-origin: top center;
+  transform: rotateX(30deg);
+  height: calc(var(--height) * 0.86);
+  z-index: -1;
+}
+
+        .pic3{
+            width:200px;
+            height:200px;                   
+            align-content: center;
+            justify-content: center;
+            margin-top: 25px;
+        }
+        
+.label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #00B4D8;
+  color: white;
+  font-size: 0.9em;
+  padding: 6px 12px;
+  border-bottom-right-radius: 12px;
+  font-weight: bold;
+  z-index: 10;
+}
+
+.info-box{
+    display:flex;
+    flex-direction:column;
+    position:relative;
+    font-size: 20px;
+}
+.stars {
+  
+  color: #ffc107;
+  margin-bottom: 0.5em;
+  font-size: 14px;
+}
+.price {
+  font-size: 14px;
+}
+
+.mrp {
+  text-decoration: line-through;
+  color: #666;
+  margin-right: 0.4em;
+}
+
+.final-price {
+  font-weight: bold;
+  color: #000;
+}
+
+ .btn{
+            display:box;
+            position:relative;
+            width:60px;
+            height:40px;
+            background-color:#00B4D8 ;
+            border-radius: 30px;
+            border:1px solid #b0e4f4 ;
+            
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+
+
+.flex-box{
+            width:350%;
+            height:120vh;
+            flex-direction: column;
+            background-image: linear-gradient(#00B4D8,white); 
+            
+        }
+
+        .footer{
+            grid-area:ft;
+            width: 100%;
+            height:60vh;
+            background-color: #b0e4f4 ;
+            grid-template-rows: auto;
+            
+        }
+
+        .flex-container4{
+            display:flex;
+            flex-direction:row;
+            justify-content: space-between;
+            column-gap: 15px;
+            font-size: 16px;
+            background-color: #b0e4f4 ;
+        }
+        .flex2{
+            display:flex;
+            width:270px;
+            height:350px;
+            flex-direction: column;           
+             padding:15px;  
+        }
+        .faq-item1{
+      border-top: 2px solid #737576;
+      padding: 15px 0;
+      cursor: pointer;
+      position: relative;
+    }
+    .faq-item1:last-child {
+      border-bottom: 2px solid #8f9292;
+    }
+    .faq-item1.active .faq-answer {
+      display: block;
+    }
+     .faq-item1.active .faq-symbol {
+      transform: rotate(180deg);
+    }
+
+.link{
+  display:block;
+  width:170px;
+  border:2px solid grey;
+  border-radius: 18px;
+ align-content: center;
+ justify-content: space-between;
+ font-size: 16px;
+}
+     .fa-icon{
+      display:flex;
+      flex-direction:row;
+      align-content: center;
+      justify-content:space-around;
+    }
+    .ftr{
+      background-color: #B0E4F4;
+      font-size: 18px;
+    }
+    .act1:hover{
+       background-image: linear-gradient(to top,#B0E4F4,white);
+       font-size: 24px;
+    }
+
+    .bk{
+      display:block;
+      width:100px;
+      height:30px;
+      border:solid grey;
+
+    }
+   
+     .dropdown {
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 140px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  font-size: 18px;
+ 
+  z-index: 1;
+}
+.dropdown-content a{
+  text-decoration: none;
+  font-weight: normal;
+  
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+  color:violet;
+}
+.an{
+  display:block;
+  position:absolute;
+  width:80px;
+  height:60px;
+  background-color:#B0E4F4;
+  right:0;
+  bottom:0;  
+}
+.search{
+  display:block;
+  border:2px solid #B0E4F4;
+  border-radius:12px;
+  font-size: 20px;
+}
+   
+.topic{
+  width:400px;
+  font-size: 18px;
+}
+a:hover{
+ background-image: linear-gradient(#86c3d5,white); 
+}
+.carousel-controls {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 20px;
+      z-index: 1000;
+    }
+
+    .carousel-button {
+      padding: 10px 14px;
+      background-color: #050606;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+      transition: background 0.3s ease;
+    }
+    @media (max-width: 768px) {
+  body {
+    font-size: 18px;
+    padding: 30px;
+  }
+  .flex-container{
+   grid-template-columns:1fr ; 
+  }
+}
+
+   
+        </style>
+        </head>
+        <body>
+            <div class="main-content">
+        <div class="header">
+            <div class="nav">
+                <img src="logoearth.png">EarthBubs
+                
+                    <a href="home.html" class="active">Home</a>
+                     <div class="dropdown">
+  <span>Products</span>
+  <div class="dropdown-content">
+   <p><a href="pampers.html">Pampers</a></p>
+  <p><a href="boy.html">Boy's Fashions</a></p>
+  <p><a href="girl.html">Girl's Fashions</a></p>
+  <p><a href="soap.html">Soap</a></p>
+  <p><a href="stroller.html">Stroller</a></p>
+  <p><a href="bottle.html" >Bottle</a></p>
+  </div>
+</div>                   
+                    <a href="Offers.html" class="act">Offers</a> 
+                    <a href="about.html" class="act">About</a>
+                    <a href="contact.html" class="act">Contact Us</a>
+                    <input type="search" class="search" placeholder="Search..."/>
+                    </div> 
+                  </div>
+                    </div><br><br><br><br><br><br><br><br><br><br><br>
+ Home > Products > Soap<br><br>
+        <div class="best">
+            
+          
+            <div class="flex-container">
+            <div class="flex-card1"><div class="label">NEW</div><br><img src="soap1.png" class="pic3"><br><br>
+                
+            <div class="container1">
+  <div class='main1'><div class="info-box"><strong>Gentle Baby Soap</strong>
+    
+  <div class="stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="far fa-star"></i>
+      </div> 
+      <div class="price">
+        <span class="mrp">MRP ₹466.00</span>
+        <span class="final-price">Price ₹380.00</span>
+      </div>
+    </div>
+</div><div class="angle1"></div>
+<div class="an"></div>
+ <button class="btn ">Buy</button>
+</div>
+</div>
+             <div class="flex-card1"><div class="label">NEW</div><br><img src="soap3.png" class="pic3"><br><br>
+            <div class="container1">
+  <div class='main1'><div class="info-box"><strong>Baby Soap</strong>
+    
+  <div class="stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="far fa-star"></i>
+      </div> 
+      <div class="price">
+        <span class="mrp">MRP ₹500.00</span>
+        <span class="final-price">Price ₹325.00</span>
+      </div>
+    </div></div><div class="angle1"></div>
+    <div class="an"></div>
+   <button class="btn ">Buy</button>
+</div></div>
+              <div class="flex-card1"><div class="label">NEW</div><br><img src="soap2.png" class="pic3"><br><br>
+            <div class="container1">
+  <div class='main1'><div class="info-box"><strong>Natural soap</strong>
+    
+  <div class="stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="far fa-star"></i>
+      </div> 
+      <div class="price">
+        <span class="mrp">MRP ₹600.00</span>
+        <span class="final-price">Price ₹509.00</span>
+      </div>
+    </div></div><div class="angle1"></div>
+    <div class="an"></div>
+   <button class="btn ">Buy</button>
+</div></div>
+
+
+  <div class="flex-card1"><div class="label">NEW</div><br><img src="soap5.png" class="pic3"><br><br>
+            <div class="container1">
+  <div class='main1'><div class="info-box"><strong>Pro Baby Soap</strong>
+    
+  <div class="stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="far fa-star"></i>
+      </div> 
+      <div class="price">
+        <span class="mrp">MRP ₹470.00</span>
+        <span class="final-price">Price ₹320.00</span>
+      </div>
+    </div></div><div class="angle1"></div>
+    <div class="an"></div>
+   <button class="btn ">Buy</button>
+</div></div>
+
+
+  <div class="flex-card1"><div class="label">NEW</div><br><img src="soap1.png" class="pic3"><br><br>
+            <div class="container1">
+  <div class='main1'><div class="info-box"><strong>Mee Baby Soap</strong>
+    
+  <div class="stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="far fa-star"></i>
+      </div> 
+      <div class="price">
+        <span class="mrp">MRP ₹466.00</span>
+        <span class="final-price">Price ₹399.00</span>
+      </div>
+    </div></div><div class="angle1"></div>
+    <div class="an"></div>
+   <button class="btn ">Buy</button>
+</div></div>
+
+
+
+  <div class="flex-card1"><div class="label">NEW</div><br><img src="soap4.png" class="pic3"><br><br>
+            <div class="container1">
+  <div class='main1'><div class="info-box"><strong>Milk Baby Soap</strong>
+    
+  <div class="stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="far fa-star"></i>
+      </div> 
+      <div class="price">
+        <span class="mrp">MRP ₹980.00</span>
+        <span class="final-price">Price ₹800.00</span>
+      </div>
+    </div></div><div class="angle1"></div>
+    <div class="an"></div>
+   <button class="btn ">Buy</button>
+</div></div>
+              
+            </div>
+        </div>
+        </div><br><br>
+
+
+        <div style="padding: 100px; text-align: center;"></div>
+ <div class="carousel-controls">
+    <button class="carousel-button"><a href="girl.html">< </a>|<a href="stroller.html"> ></a></button>
+    </div>
+
+         <center>
+        <div class="link">
+          <table border="1">
+            <tr>
+              <th>
+          <a href="girl.html" style="color: #00B4D8;">< </a></th>
+          <th><a href="pampers.html">1</a>
+          <a href="boys.html">2</a>
+          <a href="girls.html">3</a>
+          <a href="soap.html">4</a>
+          <a href="stroller.html">5</a>
+          <a href="bottle.html">6</a></th>
+          <th><a href="stroller.html" style="color: #00B4D8;">></a></th>
+          </tr>
+          </table>
+          </div></center><br><br>
+       
+
+      
+
+
+ <div class="footer">
+                        <div class="flex-container4">
+                <div class="flex2">
+                  
+                    Know
+                   <div class="faq-item1"></div> 
+                    About Us
+                    <p> About Earthbubs store 
+                        Bulk purchase & corporate 
+                        Gifts</p>
+                        </div>
+                <div class="flex2">
+                    TERMS & CONDITIONS
+                    <div class="faq-item1"></div> 
+                    Shipping & Return policies
+                        <p>privacy policy FAQ's</p>
+                        </div>
+                <div class="flex2">
+                    CONTACT US
+                    <div class="faq-item1"></div> 
+                    <P> For sale:Earthbubs@co.in<br>
+                        Call:+91 1234567890<br>
+                        For Complaints: 1800 202 2222<br>
+                        Chat Time:Our Team is <br>
+                        Available From Monday to <br>
+                        saturday from 9.00 A.M to 8.00 P.M<br>
+                        For complaints:Ebcustomer care.com   
+                        </P>
+                        </div>
+
+                <div class="flex2">
+                    FOLLOW US
+                     <div class="faq-item1"></div> 
+                    <div class="fa-icon">
+                    <i class="fa fa-instagram" style="font-size:20px"></i>
+                    <i class="fa fa-facebook-f" style="font-size:20px"></i>
+                    <i class="fa fa-twitter" style="font-size:20px"></i>
+                    </div>                    
+                   </div>
+                   </div>
+                  
+                   <div class="ftr">
+                    <div class="faq-item1"></div> 
+                    <center>  copyright  &copy; 2025 All Rights Reserved</center></div>
+                  </div>                  
+
+            </div>
+
+    
+</body>
+</html>
+ 

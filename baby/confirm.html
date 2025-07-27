@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baby shop</title>
+     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        
+       body {
+    font-family: 'Poppins';font-size: 22px;
+}
+
+        .main-content{
+            display:grid;
+            font-size: 26px;
+           
+            
+            font-family:poppins;
+            grid-template-columns: repeat(3,1fr);
+            justify-content: center;
+            grid-auto-rows: minmax(auto,auto);
+            grid-template-areas: 
+                                "hd hd hd"
+                                "pc pc pc"
+                                "pc pc pc"
+                                "ft ft ft";
+            
+        }
+        .header{
+            grid-area: hd;
+            height:60vh;
+            position:absolute;
+            width:100%;
+            overflow:hidden;
+            flex-direction: column;
+            background-color: white;
+        }
+        .nav{
+            display:flex;
+            flex-direction: row;
+            position: sticky;
+            top:0;
+            left:0;
+            justify-content: space-between;
+            border:1px solid grey;
+            padding:12px 15px;
+        }
+        .active{
+          background-image: linear-gradient(to top,#B0E4F4,white);
+        }
+
+        .active1:hover{
+           background-image: linear-gradient(to top,#B0E4F4,white);
+        }
+        a{
+            text-decoration: none;
+             color:black;
+        }
+        
+.flex-box{
+            width:350%;
+            height:120vh;
+            flex-direction: column;
+            background-image: linear-gradient(#00B4D8,white); 
+            
+        }
+
+        .footer{
+            grid-area:ft;
+            width: 100%;
+            height:60vh;
+            background-color: #b0e4f4 ;
+            grid-template-rows: auto;
+            
+        }
+
+        .flex-container4{
+            display:flex;
+            flex-direction:row;
+            justify-content: space-between;
+            column-gap: 15px;
+            font-size: 16px;
+            background-color: #b0e4f4 ;
+        }
+        .flex2{
+            display:flex;
+            width:270px;
+            height:350px;
+            flex-direction: column;           
+             padding:15px;  
+        }
+        .faq-item1{
+      border-top: 2px solid #737576;
+      padding: 15px 0;
+      cursor: pointer;
+      position: relative;
+    }
+    .faq-item1:last-child {
+      border-bottom: 2px solid #8f9292;
+    }
+    .faq-item1.active .faq-answer {
+      display: block;
+    }
+     .faq-item1.active .faq-symbol {
+      transform: rotate(180deg);
+    }
+
+.link{
+  display:block;
+  width:170px;
+  border:2px solid grey;
+  border-radius: 18px;
+ align-content: center;
+ justify-content: space-between;
+ font-size: 16px;
+}
+     .fa-icon{
+      display:flex;
+      flex-direction:row;
+      align-content: center;
+      justify-content:space-around;
+    }
+    .ftr{
+      background-color: #B0E4F4;
+      font-size: 18px;
+    }
+    .act1:hover{
+       background-image: linear-gradient(to top,#B0E4F4,white);
+       font-size: 24px;
+    }
+
+    .bk{
+      display:block;
+      width:100px;
+      height:30px;
+      border:solid grey;
+
+    }
+   
+    .cart-container {
+  max-width: 900px;
+  margin: auto;
+  border: 1px solid #e2f4fb;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cart-table th, .cart-table td {
+  padding: 15px;
+  text-align: center;
+  border-bottom: 1px solid #e2f4fb;
+}
+
+.cart-table th {
+  background-color: #f9fdff;
+  color: #222;
+  font-weight: 600;
+}
+
+.product-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-align: left;
+}
+
+.product-info img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+
+select {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.remove-btn {
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  color: #00aaff;
+  cursor: pointer;
+}
+
+.cart-bottom {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  align-items: flex-start;
+}
+
+.coupon-section input {
+  padding: 12px;
+  width: 200px;
+  border: 1px solid #d1f0f9;
+  border-radius: 8px;
+  background-color: #eafaff;
+}
+
+.apply-btn {
+  padding: 12px 20px;
+  background-color: #c2efff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.cart-total {
+  background-color: #f9fdff;
+  padding: 20px;
+  border: 1px solid #e2f4fb;
+  border-radius: 10px;
+}
+
+
+
+
+
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background: #fff;
+  color: #111;
+}
+
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 30px;
+  border-bottom: 1px solid #e3e3e3;
+  background-color: #ffffff;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.logo img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.nav-links a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #00c0ff;
+}
+
+.search-box input {
+  padding: 8px 12px;
+  border: 2px solid #b3e7f7;
+  border-radius: 8px;
+  outline: none;
+}
+
+.breadcrumb {
+  padding: 20px 30px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.order-complete {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.confirmation-img {
+  max-width: 250px;
+  width: 100%;
+  height: auto;
+}
+
+.order-id {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+ 
+    .confirmation-container {
+      text-align: center;
+      position: relative;
+      z-index: 10;
+    }
+
+    .confirmation-container h1 {
+      font-size: 3em;
+      animation: popText 1s ease-out forwards;
+      opacity: 0;
+    }
+
+    @keyframes popText {
+      0% {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+  
+    .firework {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: transparent;
+      top: 50%;
+      left: 50%;
+    }
+
+    .firework::before,
+    .firework::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      width: 10px;
+      height: 10px;
+      background: red;
+      animation: explode 1.5s ease-out infinite;
+    }
+
+    .firework::after {
+      background: yellow;
+      animation-delay: 0.2s;
+    }
+
+    @keyframes explode {
+      0% {
+        transform: scale(0.5) translate(0, 0);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1.5) translate(calc(-100px + 200px * var(--x)), calc(-100px + 200px * var(--y)));
+        opacity: 0;
+      }
+    }
+
+   
+    .firework:nth-child(1) { --x: 0.2; --y: 0.4; }
+    .firework:nth-child(2) { --x: -0.4; --y: 0.1; }
+    .firework:nth-child(3) { --x: 0.6; --y: -0.2; }
+    .firework:nth-child(4) { --x: -0.5; --y: -0.3; }
+    .firework:nth-child(5) { --x: 0.1; --y: -0.5; }
+    .firework:nth-child(6) { --x: -0.2; --y: 0.5; }
+
+     .dropdown {
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 140px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  font-size: 18px;
+ 
+  z-index: 1;
+}
+.dropdown-content a{
+  text-decoration: none;
+  font-weight: normal;
+  
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+  color:violet;
+}
+.an{
+  display:block;
+  position:absolute;
+  width:80px;
+  height:60px;
+  background-color:#B0E4F4;
+  right:0;
+  bottom:0;  
+}
+.search{
+  display:block;
+  border:2px solid #B0E4F4;
+  border-radius:12px;
+  font-size: 20px;
+}
+   
+.topic{
+  width:400px;
+  font-size: 18px;
+}
+a:hover{
+ background-image: linear-gradient(#86c3d5,white); 
+}
+.carousel-controls {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 20px;
+      z-index: 1000;
+    }
+
+    .carousel-button {
+      padding: 10px 14px;
+      background-color: #050606;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+      transition: background 0.3s ease;
+    }
+
+    .carousel-button:hover {
+      background-color: #161717;
+      color:white;
+    }     
+    .confirm{
+      color:rgb(6, 129, 96);
+    }
+    @media (max-width: 768px) {
+  body {
+    font-size: 18px;
+    padding: 30px;
+  }
+  .flex-container{
+   grid-template-columns:1fr ; 
+  }
+  .main-content{
+    grid-template-columns:1fr ; 
+  }
+}
+       </style>
+        </head>
+        <body>
+            <div class="main-content">
+        <div class="header">
+            <div class="nav">
+                <img src="logoearth.png">EarthBubs
+                
+                    <a href="home.html" class="active">Home</a>
+<div class="dropdown">
+  <span>Products</span>
+  <div class="dropdown-content">
+   <p><a href="pampers.html">Pampers</a></p>
+  <p><a href="boy.html">Boy's Fashions</a></p>
+  <p><a href="girl.html">Girl's Fashions</a></p>
+  <p><a href="soap.html">Soap</a></p>
+  <p><a href="stroller.html">Stroller</a></p>
+  <p><a href="bottle.html" >Bottle</a></p>
+  </div>
+</div>                     
+                    <a href="Offers.html" class="act">Offers</a> 
+                    <a href="about.html" class="act">About</a>
+                    <a href="contact.html" class="act">Contact Us</a>
+                    <input type="search" class="search" placeholder="Search..."/>
+                    </div> 
+                  </div>
+                    </div><br><br><br><br><br><br><br><br><br><br><br><br>
+
+        
+           
+           
+            
+
+            <div class="breadcrumb">
+  Home &gt; Add to Cart &gt; Payments &gt; <strong><p class="confirm">Order Complete</p></strong>
+</div>
+
+  
+   
+
+<div class="order-complete">
+  
+
+       <div class="confirmation-container">
+    <h1 class="confirm">🎉 Order Confirmed!</h1>
+  </div>
+
+ 
+  <div class="firework"></div>
+  <div class="firework"></div>
+  <div class="firework"></div>
+  <div class="firework"></div>
+  <div class="firework"></div>
+  <div class="firework"></div>
+
+
+
+
+
+  <p class="order-id">Order ID: OCD1232</p>
+</div>
+ <div style="padding: 100px; text-align: center;"></div>
+ <div class="carousel-controls">
+    <button class="carousel-button"><a href="payments.html">< </a>|<a href="home.html"> ></a></button>
+   
+  </div>
+ 
+         <center>
+        <div class="link">
+          <table border="1">
+            <tr>
+              <th>
+          <a href="payments.html" style="color: #00B4D8;">< </a></th>
+          <th><a href="pampers.html">1</a>
+          <a href="boys.html">2</a>
+          <a href="girls.html">3</a>
+          <a href="soap.html">4</a>
+          <a href="stroller.html">5</a>
+          <a href="bottle.html">6</a></th>
+          <th><a href="home.html" style="color: #00B4D8;">></a></th>
+          </tr>
+          </table>
+          </div></center><br><br>
+       
+
+      
+
+
+ <div class="footer">
+                        <div class="flex-container4">
+                <div class="flex2">
+                  
+                    Know
+                   <div class="faq-item1"></div> 
+                    About Us
+                    <p> About Earthbubs store 
+                        Bulk purchase & corporate 
+                        Gifts</p>
+                        </div>
+                <div class="flex2">
+                    TERMS & CONDITIONS
+                    <div class="faq-item1"></div> 
+                    Shipping & Return policies
+                        <p>privacy policy FAQ's</p>
+                        </div>
+                <div class="flex2">
+                    CONTACT US
+                    <div class="faq-item1"></div> 
+                    <P> For sale:Earthbubs@co.in<br>
+                        Call:+91 1234567890<br>
+                        For Complaints: 1800 202 2222<br>
+                        Chat Time:Our Team is <br>
+                        Available From Monday to <br>
+                        saturday from 9.00 A.M to 8.00 P.M<br>
+                        For complaints:Ebcustomer care.com   
+                        </P>
+                        </div>
+
+                <div class="flex2">
+                    FOLLOW US
+                     <div class="faq-item1"></div> 
+                    <div class="fa-icon">
+                    <i class="fa fa-instagram" style="font-size:20px"></i>
+                    <i class="fa fa-facebook-f" style="font-size:20px"></i>
+                    <i class="fa fa-twitter" style="font-size:20px"></i>
+                    </div>                    
+                   </div>
+                   </div>
+                  
+                   <div class="ftr">
+                    <div class="faq-item1"></div> 
+                    <center>  copyright  &copy; 2025 All Rights Reserved</center></div>
+                  </div>                  
+
+            </div>
+
+    
+</body>
+</html>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baby shop</title>
+     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        
+       body {
+    font-family: 'Poppins';font-size: 22px;
+}
+
+        .main-content{
+            display:grid;
+            font-size: 26px;
+           
+            
+            font-family:poppins;
+            grid-template-columns: repeat(3,1fr);
+            justify-content: center;
+            grid-auto-rows: minmax(auto,auto);
+            grid-template-areas: 
+                                "hd hd hd"
+                                "pc pc pc"
+                                "pc pc pc"
+                                "ft ft ft";
+            
+        }
+        .header{
+            grid-area: hd;
+            height:60vh;
+            position:absolute;
+            width:100%;
+            overflow:hidden;
+            flex-direction: column;
+            background-color: white;
+        }
+        .nav{
+            display:flex;
+            flex-direction: row;
+            position: sticky;
+            top:0;
+            left:0;
+            justify-content: space-between;
+            border:1px solid grey;
+            padding:12px 15px;
+        }
+        .active{
+          background-image: linear-gradient(to top,#B0E4F4,white);
+        }
+
+        .active1:hover{
+           background-image: linear-gradient(to top,#B0E4F4,white);
+        }
+       
+        a{
+            text-decoration: none;
+             color:black;
+        }
+        
+         
+
+    .product-container {
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      animation: slideIn 1s ease-out;
+    }
+    .product-image img {
+      width: 400px;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .product-image img:hover {
+      transform: scale(2.0);
+    }
+     .product-details {
+      max-width: 400px;
+    }
+
+    .product-details h2 {
+      margin: 0;
+      font-size: 22px;
+    }
+     .stars {
+      color: gold;
+      margin: 5px 0;
+    }
+
+    .product-details p {
+      font-size: 14px;
+      color: #333;
+    }
+    .price {
+      font-size: 20px;
+      margin: 10px 0;
+    }
+
+    .price del {
+      color: gray;
+      margin-right: 10px;
+    }
+
+    .colors span {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      margin: 5px;
+      cursor: pointer;
+    }
+    .qty-box {
+      display: flex;
+      align-items: center;
+      margin: 10px 0;
+    }
+
+    .qty-box button {
+      width: 30px;
+      height: 30px;
+      font-size: 18px;
+      border: none;
+      cursor: pointer;
+      background: #e0e0e0;
+      border-radius: 6px;
+    }
+    .qty-box span {
+      margin: 0 10px;
+      font-size: 16px;
+    }
+
+    .buy-btn {
+      padding: 10px 20px;
+      background: #00b7ff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s ease;
+    }
+
+    .buy-btn:hover {
+      background: #009edb;
+    }
+
+    .info-box {
+      margin-top: 15px;
+      font-size: 13px;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .info-box div {
+      flex: 1;
+      padding: 10px;
+      background: #f2faff;
+      border: 1px solid #cceeff;
+      border-radius: 8px;
+      text-align: center;
+    }
+    @keyframes slideIn {
+      from {
+        transform: translateY(50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+        .footer{
+            grid-area:ft;
+            width: 100%;
+            height:60vh;
+            background-color: #b0e4f4 ;
+            grid-template-rows: auto;
+            
+        }
+
+        .flex-container4{
+            display:flex;
+            flex-direction:row;
+            justify-content: space-between;
+            column-gap: 15px;
+            font-size: 16px;
+            background-color: #b0e4f4 ;
+        }
+        .flex2{
+            display:flex;
+            width:270px;
+            height:350px;
+            flex-direction: column;           
+             padding:15px;  
+        }
+        .faq-item1{
+      border-top: 2px solid #737576;
+      padding: 15px 0;
+      cursor: pointer;
+      position: relative;
+    }
+    .faq-item1:last-child {
+      border-bottom: 2px solid #8f9292;
+    }
+    .faq-item1.active .faq-answer {
+      display: block;
+    }
+     .faq-item1.active .faq-symbol {
+      transform: rotate(180deg);
+    }
+
+.link{
+  display:block;
+  width:170px;
+  border:2px solid grey;
+  border-radius: 18px;
+ align-content: center;
+ justify-content: space-between;
+ font-size: 16px;
+}
+     .fa-icon{
+      display:flex;
+      flex-direction:row;
+      align-content: center;
+      justify-content:space-around;
+    }
+    .ftr{
+      background-color: #B0E4F4;
+      font-size: 18px;
+    }
+    .act1:hover{
+       background-image: linear-gradient(to top,#B0E4F4,white);
+       font-size: 24px;
+    }
+
+    .bk{
+      display:block;
+      width:100px;
+      height:30px;
+      border:solid grey;
+
+    }
+   
+     .dropdown {
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 140px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  font-size: 18px;
+ 
+  z-index: 1;
+}
+.dropdown-content a{
+  text-decoration: none;
+  font-weight: normal;
+  
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+  color:violet;
+}
+.an{
+  display:block;
+  position:absolute;
+  width:80px;
+  height:60px;
+  background-color:#B0E4F4;
+  right:0;
+  bottom:0;  
+}
+.search{
+  display:block;
+  border:2px solid #B0E4F4;
+  border-radius:12px;
+  font-size: 20px;
+}
+   
+.topic{
+  width:400px;
+  font-size: 18px;
+}
+   
+.left > img{
+   
+    
+    width:100px;
+    height:100px;
+}
+.left{
+    display: flex;
+    flex-direction: column;
+    column-gap: 50px;
+    width:200px;
+}
+a:hover{
+ background-image: linear-gradient(#86c3d5,white); 
+}
+.carousel-controls {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 20px;
+      z-index: 1000;
+    }
+
+    .carousel-button {
+      padding: 10px 14px;
+      background-color: #050606;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+      transition: background 0.3s ease;
+    }
+
+    .carousel-button:hover {
+      background-color: #161717;
+      color:white;
+    }     
+
+    @media (max-width: 768px) {
+  body {
+    font-size: 18px;
+    padding: 30px;
+  }
+  .flex-container{
+   grid-template-columns:1fr ; 
+  }
+  .main-content{
+    grid-template-columns:1fr ; 
+  }
+}
+        </style>
+        </head>
+        <body>
+            <div class="main-content">
+        <div class="header">
+            <div class="nav">
+                <img src="logoearth.png">EarthBubs
+                
+                    <a href="home.html" class="active">Home</a>
+                     <div class="dropdown">
+  <span>Products</span>
+  <div class="dropdown-content">
+   <p><a href="pampers.html">Pampers</a></p>
+  <p><a href="boy.html">Boy's Fashions</a></p>
+  <p><a href="girl.html">Girl's Fashions</a></p>
+  <p><a href="soap.html">Soap</a></p>
+  <p><a href="stroller.html">Stroller</a></p>
+  <p><a href="bottle.html" >Bottle</a></p>
+  </div>
+</div>                   
+                    <a href="Offers.html" class="act">Offers</a> 
+                    <a href="about.html" class="act">About</a>
+                    <a href="contact.html" class="act">Contact Us</a>
+                    <input type="search" class="search" placeholder="Search..."/>
+                    </div> 
+                  </div>
+                    </div><br><br><br><br><br><br><br><br><br><br><br>
+
+        <div class="best">
+           
+            Home > Products > Checkout<br><br>
+            
+
+            <div class="product-container">
+                <div class="left">
+            <img src="wipes2.png">
+            <img src="wipes3.png">
+            <img src="pampers2.png">
+            <img src="pampers6.png">
+
+            </div>
+    <div class="product-image">
+        
+      <img src="pampers4.png" alt="Baby Diaper" />
+    </div>
+    <div class="product-details">
+      <h2>Pampers Baby Dry Diapers</h2>
+      <div class="stars">⭐⭐⭐⭐⭐ (18 Reviews) | <span style="color:green;">In Stock</span></div>
+      <p>
+        Give your baby the gentle care they deserve with EarthBubs Premium Baby Pampers, designed for all-day comfort and protection.
+        Crafted with ultra-soft, breathable materials, these diapers keep your little one dry, happy, and rash-free.
+      </p>
+      <div class="price">
+        <del>₹1044.00</del> <strong style="color:#0077cc;">Sale Price ₹700.00</strong>
+      </div>
+
+      <div class="colors">
+        Colours:
+        <span style="background: #e91e63;"></span>
+        <span style="background: #2196f3;"></span>
+        <span style="background: #9c27b0;"></span>
+      </div>
+
+       <div class="qty-box">
+        <button onclick="updateQty(-1)">-</button>
+        <span id="quantity">2</span>
+        <button onclick="updateQty(1)">+</button>
+      </div>
+
+      <button class="buy-btn">Buy Now</button>
+
+      <div class="info-box">
+        <div>🚚 Free Delivery<br>
+        <p>Enter your postal code for Delivery Availability</p></div>
+        <div>🔁 Return in 7 Days<br>
+        <p>Free 7 Days Delivery Returns Details</p></div>
+      </div>
+      </div>
+  </div>
+      <div style="padding: 100px; text-align: center;"></div>
+ <div class="carousel-controls">
+    <button class="carousel-button"><a href="contact.html">< </a>|<a href="payments.html"> ></a></button>
+    </div>
+   
+         <center>
+        <div class="link">
+          <table border="1">
+            <tr>
+              <th>
+          <a href="cart.html" style="color: #00B4D8;">< </a></th>
+          <th><a href="pampers.html">1</a>
+          <a href="boys.html">2</a>
+          <a href="girls.html">3</a>
+          <a href="soap.html">4</a>
+          <a href="stroller.html">5</a>
+          <a href="bottle.html">6</a></th>
+          <th><a href="payments.html" style="color: #00B4D8;">></a></th>
+          </tr>
+          </table>
+          </div></center><br><br>
+       
+
+      
+
+
+ <div class="footer">
+                        <div class="flex-container4">
+                <div class="flex2">
+                  
+                    Know
+                   <div class="faq-item1"></div> 
+                    About Us
+                    <p> About Earthbubs store 
+                        Bulk purchase & corporate 
+                        Gifts</p>
+                        </div>
+                <div class="flex2">
+                    TERMS & CONDITIONS
+                    <div class="faq-item1"></div> 
+                    Shipping & Return policies
+                        <p>privacy policy FAQ's</p>
+                        </div>
+                <div class="flex2">
+                    CONTACT US
+                    <div class="faq-item1"></div> 
+                    <P> For sale:Earthbubs@co.in<br>
+                        Call:+91 1234567890<br>
+                        For Complaints: 1800 202 2222<br>
+                        Chat Time:Our Team is <br>
+                        Available From Monday to <br>
+                        saturday from 9.00 A.M to 8.00 P.M<br>
+                        For complaints:Ebcustomer care.com   
+                        </P>
+                        </div>
+
+                <div class="flex2">
+                    FOLLOW US
+                     <div class="faq-item1"></div> 
+                    <div class="fa-icon">
+                    <i class="fa fa-instagram" style="font-size:20px"></i>
+                    <i class="fa fa-facebook-f" style="font-size:20px"></i>
+                    <i class="fa fa-twitter" style="font-size:20px"></i>
+                    </div>                    
+                   </div>
+                   </div>
+                  
+                   <div class="ftr">
+                    <div class="faq-item1"></div> 
+                    <center>  copyright  &copy; 2025 All Rights Reserved</center></div>
+                  </div>                  
+
+            </div>
+
+    <script>
+    let qty = 2;
+    const quantityDisplay = document.getElementById("quantity");
+
+    function updateQty(change) {
+      qty += change;
+      if (qty < 1) qty = 1;
+      quantityDisplay.textContent = qty;
+    }
+  </script>
+</body>
+</html>
+ 
